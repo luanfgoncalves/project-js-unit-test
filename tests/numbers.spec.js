@@ -18,8 +18,16 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it('Verifica se a função `numbers` retorna `true` quando o array contém apenas números e falso caso contrário', () => {
     fail('Teste vazio!');
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
+    const testArrOne = [1, 2, 3, 4, 5];
+    expect(numbers(testArrOne)).toBeTruthy();
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
+    const testArrTwo = [1, 2, '3', 4, 5];
+    expect(numbers(testArrTwo)).toBeFalsy();
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
+    const testArrThree = [1, 'a', 3];
+    expect(numbers(testArrThree)).toBeFalsy();
     // Escreva um teste em que a função recebe [' '] e retorna false
+    const testArrFour = [' '];
+    expect(numbers(testArrFour)).toBeFalsy();
   });
 });
