@@ -44,14 +44,11 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
-  const chave = Object.key();
-  const entrada = Object.entries();
-  const valor = Object.values();
   let func = () => {};
   let answer = [];
-  if (type === 'keys') { func = chave; }
-  if (type === 'entries') { func = entrada; }
-  if (type === 'values') { func = valor; }
+  if (type === 'keys') { func = Object.key(); }
+  if (type === 'entries') { func = Object.entries(); }
+  if (type === 'values') { func = Object.values(); }
     for (let index = 0; index < func(object).length; index += 1) {
     answer[index] = String(func(object)[index]);
     }
