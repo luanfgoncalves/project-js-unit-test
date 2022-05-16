@@ -44,7 +44,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   });
 
   test('Verifica se o objeto retornado possui 3 propriedades.', () => {
-    expect(Object.keys(circle(10)).length).toBe(3);
+    expect(Object.keys(circle(10).length).toBe(3);
     fail('circle não é um objeto');
   });
 
