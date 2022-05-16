@@ -44,38 +44,18 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
+  const chave = Object.key();
+  const entrada = Object.entries();
+  const valor = Object.values();
+  let func = () => {};
   let answer = [];
-  if (type === 'keys') {
-    for (let index = 0; index < Object.keys(object).length; index += 1) {
-      answer[index] = String(Object.keys(answer)[index]);
+  if (type === 'keys') { func = chave; }
+  if (type === 'entries') { func = entrada; }
+  if (type === 'values') { func = valor; }
+    for (let index = 0; index < func(object).length; index += 1) {
+    answer[index] = String(func(object)[index]);
     }
-  }
-
-  if (type === 'entries') {}
-
-  if (type === 'values') {
-    for (let index = 0; index < Object.values(object).length; index += 1) {
-      answer[index] = String(Object.values(answer)[index]);
-    }
-  }
+  return answer;
 };
 
 module.exports = { calculator, arrayGenerator };
-
-
-// const arrayGenerator = (type, object) => {
-//   let answer = [];
-//   if (type === 'keys') {
-//     for (let index = 0; index < Object.keys(object).length; index += 1) {
-//       answer[index] = String(Object.keys(answer)[index]);
-//     }
-//   }
-
-//   if (type === 'entries') {}
-
-//   if (type === 'values') {
-//     for (let index = 0; index < Object.values(object).length; index += 1) {
-//       answer[index] = String(Object.values(answer)[index]);
-//     }
-//   }
-// };
