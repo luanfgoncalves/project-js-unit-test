@@ -44,15 +44,15 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
-  let func = () => {};
+  // let func = () => {};
   let answer = [];
-  if (type === 'keys') { func = Object.keys(); }
-  if (type === 'entries') { func = Object.entries(); }
-  if (type === 'values') { func = Object.values(); }
-    for (let index = 0; index < func(object).length; index += 1) {
-    answer[index] = String(func(object)[index]);
-    }
-  return answer;
+  if (type === 'keys') { return Object.keys(object); }
+  if (type === 'entries') { return Object.entries(object); }
+  if (type === 'values') { return Object.values(object); }
+  //   for (let index = 0; index < func(object).length; index += 1) {
+  //   answer[index] = String(func(object)[index]);
+  //   }
+  // return answer;
 };
 
 module.exports = { calculator, arrayGenerator };

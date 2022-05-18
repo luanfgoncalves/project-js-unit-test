@@ -58,12 +58,10 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
         class: 'Necromancer',
         phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
       });
-    fail('A função não retorna o objeto corretamente!');
   });
 
   it('Verifica se a função, quando não recebe nenhum parâmetro, retorna undefined.', () => {
     expect(getCharacter()).toBeUndefined();
-    fail('A função não retorna undefined quando não recebe parâmetros!');
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Arya', () => {
@@ -73,7 +71,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
       class: 'Rogue',
       phrases: ['Not today', 'A girl has no name.'],
     });
-    fail('A função não retorna o parâmetro esperado quando recebe "arya"!');
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Brienne', () => {
@@ -83,7 +80,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
       class: 'Knight',
       phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
     });
-    fail('A função não retorna o parâmetro esperado quando recebe "brienne"!');
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Melissandre', () => {
@@ -93,14 +89,12 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
       class: 'Necromancer',
       phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
     });
-    fail('A função não retorna o parâmetro esperado quando recebe "melissandre"!');
   });
 
   test('Verifica se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.', () => {
     expect(getCharacter('arya')).toEqual(getCharacter('ARYA'));
     expect(getCharacter('brienne')).toEqual(getCharacter('BRIENNE'));
     expect(getCharacter('melissandre')).toEqual(getCharacter('MELISSANDRE'));
-    fail('O parâmetro não é case sensitive');
   });
 
   test('Verifica se ao passar um nome que não está na tabela, a função retorna undefined', () => {
@@ -109,7 +103,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     expect(getCharacter('cercei')).toBeUndefined();
     expect(getCharacter('tyrion')).toBeUndefined();
     expect(getCharacter('sansa')).toBeUndefined();
-    fail('A função não retorna undefined quando recebe parâmetros inadequados!');
   });
 
 });

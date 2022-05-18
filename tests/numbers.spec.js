@@ -20,30 +20,25 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
     const testArrOne = [1, 2, 3, 4, 5];
     expect(numbers(testArrZero)).toBe(false);
     expect(numbers(testArrOne)).toBe(true);
-    fail('A função "numbers" retorna "true" quando o array contém apenas números e falso caso contrário!');
   });
-  // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
+
   test('Verifica se a função recebe [1, 2, 3, 4, 5] e retorna true', () => {
     const testArrOne = [1, 2, 3, 4, 5];
     expect(numbers(testArrOne)).toBe(true);
-    fail('A função recebe [1, 2, 3, 4, 5] e não retorna true!');
   });
-  // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
+
   test('Verifica se a função recebe [1, 2, "3", 4, 5] e retorna false', () => {
     const testArrTwo = [1, 2, '3', 4, 5];
     expect(numbers(testArrTwo)).toBe(false);
-    fail('A função recebe [1, 2, "3", 4, 5] e não retorna false!');
   });
-  // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
+
   test('Verifica se a função recebe [1, "a", 3] e retorna false', () => {
     const testArrThree = [1, 'a', 3];
     expect(numbers(testArrThree)).toBe(false);
-    fail('A função recebe [1, "a", 3] e retorna false!');
   });
-  // Escreva um teste em que a função recebe [' '] e retorna false
+
   test('Verifica se a função recebe [" "] e retorna false', () => {
     const testArrFour = [' '];
     expect(numbers(testArrFour)).toBe(false);
-    fail('A a função recebe [" "] e não retorna false!');
   });
 });
