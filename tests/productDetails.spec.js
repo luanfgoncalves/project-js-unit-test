@@ -31,7 +31,7 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    expect(productDetails('Alcool gel', 'Máscara')).toBe(
+    expect(productDetails('Alcool gel', 'Máscara')).toEqual(
       [
         {
           name: 'Alcool gel',
@@ -50,11 +50,11 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   });
 
   test('Verifica se productDetails é uma função.', () => {
-    expect(typeof productDetails).toBe('function');
+    expect(typeof productDetails).toEqual('function');
   });
 
   test('Verifica se o retorno da função é um array.', () => {
-    expect(typeof productDetails('testProduct', 'testProductB')).toBe('Object');
+    expect(typeof productDetails('testProduct', 'testProductB')).toEqual('object');
     expect(Array.isArray(productDetails('testProduct', 'testProductB'))).toBe(true);
   });
 
@@ -63,19 +63,19 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   });
 
   test('Verifica se os dois itens dentro do array retornado pela função são objetos.', () => {
-    expect(typeof productDetails('testProduct', 'testProductB')[0]).toBe('Object');
+    expect(typeof productDetails('testProduct', 'testProductB')[0]).toEqual('object');
     expect(Array.isArray(productDetails('testProduct', 'testProductB')[0])).toBe(false);
-    expect(typeof productDetails('testProduct', 'testProductB')[1]).toBe('Object');
+    expect(typeof productDetails('testProduct', 'testProductB')[1]).toEqual('object');
     expect(Array.isArray(productDetails('testProduct', 'testProductB')[1])).toBe(false);
   });
 
   test('Verifica se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
-    expect(productDetails('testProduct', 'testProductB')[0]).not.toMatchObject(productDetails('testProduct', 'testProductB')[1]);
+    expect(productDetails('testProduct', 'testProductB')[0]).not.toEqual(productDetails('testProduct', 'testProductB')[1]);
   });
 
   test('Verifica se os dois productIds terminam com 123.', () => {
-    expect(typeof productDetails('testProduct', 'testProductB')).toHaveReturnedWith('testProduct123')
-    expect(typeof productDetails('testProduct', 'testProductB')).toLastHaveReturnedWith('testProductB123')
+    expect(Object.values(productDetails('testProduct', 'testProductB')[0])[1]).toEqual( { productId: 'testProduct123' } );
+    expect(Object.values(productDetails('testProduct', 'testProductB')[1])[1]).toEqual( { productId: 'testProductB123' } );
   });
 
 });
