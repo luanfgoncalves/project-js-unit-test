@@ -26,7 +26,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
     expect(circle(1)).toEqual({radius: 1, area: 3.14, circumference: 6.28});
     expect(circle(7)).toEqual({radius: 7, area: 153.86, circumference: 43.96});
-    expect(circle(3)).toEuqla({radius: 3, area: 28,26, circumference: 18.84});
+    expect(circle(3)).toEuqla({radius: 3, area: 28.26, circumference: 18.84});
     fail('A função "circle" não retorna um objeto contendo os valores esperados!');
   });
 
