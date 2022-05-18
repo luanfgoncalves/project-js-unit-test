@@ -26,7 +26,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
     expect(circle(1)).toEqual({radius: 1, area: 3.14, circumference: 6.28});
     expect(circle(7)).toEqual({radius: 7, area: 153.86, circumference: 43.96});
-    expect(circle(3)).toEuqla({radius: 3, area: 28.26, circumference: 18.84});
+    expect(circle(3)).toEqual({radius: 3, area: 28.259999999999998, circumference: 18.84});
   });
 
   test('verifica se circle retorna undefined, caso o parâmetro passado não seja um número.', () => {
@@ -41,7 +41,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   });
 
   test('Verifica se o objeto retornado possui 3 propriedades.', () => {
-    expect(Object.keys(circle(10).length)).toBe(3);
+    expect(Object.keys(circle(10)).length).toBe(3);
   });
 
   test('Verifica se a função, quando não recebe nenhum parâmetro, retorna undefined.', () => {
@@ -49,17 +49,17 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   });
 
   test('Verifica se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.', () => {
-    expect(circle(2)).toHavePropety('circunference', 12.56);
+    expect(Object.entries(circle(2))[2]).toEqual( ['circumference', 12.56] );
   });
 
   test('Verifica se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.', () => {
-    expect(circle(3)).toHavePropety('area', 28.26);
+    expect(Object.entries(circle(3))[1]).toEqual( ['area', 28.259999999999998] );
   });
 
   test('Verifica se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.', () => {
-    expect(circle(3)).toHavePropety('radius', 3);
-    expect(circle(3)).toHavePropety('area', 28.26);
-    expect(circle(3)).toHavePropety('circumference', 18.84);
+    expect(Object.entries(circle(3))[0]).toEqual( ['radius', 3] );
+    expect(Object.entries(circle(3))[1]).toEqual( ['area', 28.259999999999998] );
+    expect(Object.entries(circle(3))[2]).toEqual( ['circumference', 18.84] );
   });
 
 });
