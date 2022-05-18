@@ -17,7 +17,7 @@ const average = (arr) => {
     result += arr[index];
   }
   if (typeof result === 'number') {
-    return Math.abs(result / arr.length);
+    return Math.round(result / arr.length);
   }
 };
 
