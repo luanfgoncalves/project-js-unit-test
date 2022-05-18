@@ -17,11 +17,10 @@
 
 const createStudent = (nome) => {
   if (typeof nome === 'string') {
-    const estudante = {
+    return {
       name: nome, 
       feedback() { 'Eita pessoa boa!'; },
     };
-    return estudante;
   }
 };
 
