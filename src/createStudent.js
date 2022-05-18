@@ -16,10 +16,11 @@
 */
 
 const createStudent = (nome) => {
-  let estudante = {};
-  const feedback = () => { 'Eita pessoa boa!'; };
   if (typeof nome === 'string') {
-    estudante = { name: nome, feedback };
+    const estudante = {
+      name: nome, 
+      feedback() { 'Eita pessoa boa!'; },
+    };
     return estudante;
   }
 };
