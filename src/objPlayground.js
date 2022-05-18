@@ -46,7 +46,7 @@ const calculator = (number1, number2) => {
 const arrayGenerator = (type, object) => {
   let func = () => {};
   let answer = [];
-  if (type === 'keys') { func = Object.key(); }
+  if (type === 'keys') { func = Object.keys(); }
   if (type === 'entries') { func = Object.entries(); }
   if (type === 'values') { func = Object.values(); }
     for (let index = 0; index < func(object).length; index += 1) {

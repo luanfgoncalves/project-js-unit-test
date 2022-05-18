@@ -27,24 +27,25 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(10)).toHavePropety('radius');
     expect(circle(10)).toHavePropety('area');
     expect(circle(10)).toHavePropety('circumference');
-    fail('Teste vazio!');
+    fail('A função "circle" não retorna um objeto contendo os valores esperados!');
   });
 
   test('verifica se circle retorna undefined, caso o parâmetro passado não seja um número.', () => {
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    expect(circle(a)).toBeUndefined();
     expect(circle('a')).toBeUndefined();
+    expect(circle(['a', 'b'])).toBeUndefined();
     expect(circle('2')).toBeUndefined();
     fail('Circle não retorna "undefined" na ausencia de parâmetros');
   });
 
   test('Verifica se circle retorna um objeto.', () => {
-    expect(circle(10)).toHavePropety('radius');
+    expect(typeof circle(10)).toBe('object');
+    expect(Array.isArray(circle(10))).toBe(false);
     fail('circle não é um objeto');
   });
 
   test('Verifica se o objeto retornado possui 3 propriedades.', () => {
-    expect(Object.keys(circle(10).length).toBe(3);
+    expect(Object.keys(circle(10).length)).toBe(3);
     fail('circle não é um objeto');
   });
 

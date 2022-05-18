@@ -31,7 +31,23 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    expect(productDetails('Alcool gel', 'Máscara')).toBe(
+      [
+        {
+          name: 'Alcool gel',
+          details: {
+            productId: 'Alcool gel123'
+          }
+        },
+        {
+          name: 'Máscara',
+          details: {
+            productId: 'Máscara123'
+          }
+        }
+      ]
+    );
+    fail('A função `productDetails` não tem o comportamento esperado!');
   });
 
   test('Verifica se productDetails é uma função.', () => {
@@ -41,7 +57,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
 
   test('Verifica se o retorno da função é um array.', () => {
     expect(typeof productDetails('testProduct', 'testProductB')).toBe('Object');
-    expect(Array.isArray(productDetails('testProduct', 'testProductB'))).toBeTruthy();
+    expect(Array.isArray(productDetails('testProduct', 'testProductB'))).toBe(true);
     fail('O retorno da função não é um array.');
   });
 
@@ -52,9 +68,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
 
   test('Verifica se os dois itens dentro do array retornado pela função são objetos.', () => {
     expect(typeof productDetails('testProduct', 'testProductB')[0]).toBe('Object');
-    expect(Array.isArray(productDetails('testProduct', 'testProductB')[0])).toBeFalsy();
+    expect(Array.isArray(productDetails('testProduct', 'testProductB')[0])).toBe(false);
     expect(typeof productDetails('testProduct', 'testProductB')[1]).toBe('Object');
-    expect(Array.isArray(productDetails('testProduct', 'testProductB')[1])).toBeFalsy();
+    expect(Array.isArray(productDetails('testProduct', 'testProductB')[1])).toBe(false);
     fail('Os dois itens dentro do array retornado pela função não são objetos.');
   });
 

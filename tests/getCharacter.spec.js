@@ -80,38 +80,25 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   });
 
   it('Verifica se a função retorna o objeto correto para o parâmetro Arya', () => {
-    const expectedOutput = {
-      arya: {
-        name: 'Arya Stark',
-        class: 'Rogue',
-        phrases: ['Not today', 'A girl has no name.'],
-      },
-    }
-    expect(Object.keys(getCharacter('arya'))).toEqual(expectedOutput);
+    // const expectedOutput = {
+    //   arya: {
+    //     name: 'Arya Stark',
+    //     class: 'Rogue',
+    //     phrases: ['Not today', 'A girl has no name.'],
+    //   },
+    // }
+    // expect(Object.keys(getCharacter('arya'))).toEqual(expectedOutput);
+    expect(getCharacter('arya')).toHavePropety('name', 'Arya',);
     fail('A função não retorna o parâmetro esperado quando recebe "arya"!');
   });
 
   it('Verifica se a função retorna o objeto correto para o parâmetro Brienne', () => {
-    const expectedOutput = {
-      brienne: {
-        name: 'Brienne Tarth',
-        class: 'Knight',
-        phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
-      },
-    }
-    expect(Object.keys(getCharacter('brienne'))).toEqual(expectedOutput);
+    expect(getCharacter('brienne')).toHavePropety('name', 'Brienne',);
     fail('A função não retorna o parâmetro esperado quando recebe "brienne"!');
   });
 
   it('Verifica se a função retorna o objeto correto para o parâmetro Melissandre', () => {
-    const expectedOutput = {
-      melissandre: {
-      name: 'Melissandre',
-      class: 'Necromancer',
-      phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
-    },
-  };
-    expect(Object.keys(getCharacter('melissandre'))).toEqual(expectedOutput);
+    expect(getCharacter('melissandre')).toHavePropety('name', 'Melissandre',);
     fail('A função não retorna o parâmetro esperado quando recebe "melissandre"!');
   });
 
