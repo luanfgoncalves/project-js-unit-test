@@ -59,17 +59,29 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
+    test('Verifica se função "createMenu()" retorna um objeto que possui a chave "fetchMenu", a qual tem como valor uma função.', () => {
+      expect(Object.keys(createMenu()).includes('fetchMenu')).toBe(true);
+    });
     // TESTE 2: Verifique se 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`, 
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
     // ```
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
+    test('Verifica se "objetoRetornado.fetchMenu()" retorna um objeto cujas chaves são somente `food` e `drink`, considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }', () => {
+      expect(createMenu({ food: {}, drink: {} }).fetchMenu()).toEqual({
+        food: {},
+        drink: {},
+      });
+    });
     // TESTE 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
+    test('Verifica se o menu passado pra função "createMenu()" é idêntico ao menu recuperado pela função "objetoRetornado.fetchMenu()"', () => {
+      expect(typeof createMenu().fetchMenu).toBe('function');
+    });
 
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
