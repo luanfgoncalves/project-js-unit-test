@@ -65,7 +65,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Arya', () => {
-    expect(getCharacter('arya')).toHavePropety('name', 'Arya');
     expect(getCharacter('arya')).toEqual({
       name: 'Arya Stark',
       class: 'Rogue',
@@ -74,7 +73,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Brienne', () => {
-    expect(getCharacter('brienne')).toHavePropety('name', 'Brienne');
     expect(getCharacter('brienne')).toEqual({
       name: 'Brienne Tarth',
       class: 'Knight',
@@ -83,7 +81,6 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   });
 
   test('Verifica se a função retorna o objeto correto para o parâmetro Melissandre', () => {
-    expect(getCharacter('melissandre')).toHavePropety('name', 'Melissandre');
     expect(getCharacter('melissandre')).toEqual({
       name: 'Melissandre',
       class: 'Necromancer',
